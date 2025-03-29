@@ -10,10 +10,12 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.example.composeintro.ui.theme.ComposeintroTheme
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,10 +31,8 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true, widthDp = 300 , heightDp = 500 )
 @Composable
 private fun PreviewFunction() {
-    Text(text = "hello Arjun",
-        fontSize = 36.sp,
-        FontWeight = FontWeight.ExtraBold
-        
+    Text(text = "hello Arjun", fontSize = 36.sp, fontWeight =FontWeight.Bold,
+        color = Color.Blue
         )
 }
 
