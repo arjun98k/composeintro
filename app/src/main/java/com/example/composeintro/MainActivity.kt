@@ -7,11 +7,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -36,9 +38,13 @@ private fun PreviewFunction() {
 //    Text(text = "hello Arjun", fontSize = 36.sp, fontWeight =FontWeight.Bold,
 //        color = Color.Blue
 //        )
-    Image(
-        painter = painterResource(id = R.drawable.ic_launcher_foreground),
-        contentDescription = "image"
-    )
+
+    Button(onClick = {}) {
+        Text(text = "Click me")
+        Image(
+            painter = painterResource(id = R.drawable.ic_launcher_foreground),
+            contentDescription = "image", colorFilter = ColorFilter.tint(Color.Blue)
+        )
+    }
 }
 
