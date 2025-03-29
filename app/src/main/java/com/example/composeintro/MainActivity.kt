@@ -10,7 +10,9 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
 import com.example.composeintro.ui.theme.ComposeintroTheme
 
 class MainActivity : ComponentActivity() {
@@ -18,17 +20,19 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-               Text(text =" arjun")
+               Text(text ="hello arjun")
         }
     }
 }
+
+
+@Preview(showBackground = true, widthDp = 300 , heightDp = 500 )
 @Composable
-fun Sayhii(name:String){
-    Text(text = "hello $name")
-}
-@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun PreviewFunction(name: String = "arjun") {
-    Text(text = "hello $name")
+private fun PreviewFunction() {
+    Text(text = "hello Arjun",
+        fontSize = 36.sp,
+        FontWeight = FontWeight.ExtraBold
+        
+        )
 }
 
