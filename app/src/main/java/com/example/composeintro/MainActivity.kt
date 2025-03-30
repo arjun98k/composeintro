@@ -3,48 +3,46 @@ package com.example.composeintro
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.sp
-import com.example.composeintro.ui.theme.ComposeintroTheme
-
+import androidx.compose.ui.unit.dp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
-               Text(text ="hello arjun")
+            UserInputScreen()
         }
     }
 }
 
-
-@Preview(showBackground = true, widthDp = 300 , heightDp = 500 )
 @Composable
-private fun PreviewFunction() {
-//    Text(text = "hello Arjun", fontSize = 36.sp, fontWeight =FontWeight.Bold,
-//        color = Color.Blue
-//        )
+fun UserInputScreen() {
+    var text by remember { mutableStateOf("") } // Remember state
 
-    Button(onClick = {}) {
-        Text(text = "Click me")
-        Image(
-            painter = painterResource(id = R.drawable.ic_launcher_foreground),
-            contentDescription = "image", colorFilter = ColorFilter.tint(Color.Blue)
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp)
+    ) {
+        TextField(
+            value = text,
+            onValueChange = { text = it },
+            label = { Text("Enter your name") },
+            modifier = Modifier.fillMaxWidth()
         )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Text(text = "You entered: $text", style = MaterialTheme.typography.bodyLarge)
     }
 }
 
+@Preview(showBackground = true, widthDp = 300, heightDp = 500, showSystemUi = true)
+@Composable
+fun PreviewFunction() {
+    UserInputScreen()
+}
