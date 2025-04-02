@@ -62,6 +62,12 @@ var list = mutableListOf<Category>()
     list.add(Category(img = R.drawable.contacticon, title = "Arjun", subtitle = "Andro Developer"))
     list.add(Category(img = R.drawable.contacticon, title = "Adithya", subtitle = "web Developer"))
     list.add(Category(img = R.drawable.contacticon, title = "panda", subtitle = "ror Developer"))
-
+    list.add(Category(img = R.drawable.contacticon, title = "shrija", subtitle = "mobile Developer"))
+    list.add(Category(img = R.drawable.contacticon, title = "mohit", subtitle = "devops Developer"))
+    list.add(Category(img = R.drawable.contacticon, title = "ranjit", subtitle = "Ai Developer"))
+    list.add(Category(img = R.drawable.contacticon, title = "Arjun", subtitle = "Andro Developer"))
+    list.add(Category(img = R.drawable.contacticon, title = "Adithya", subtitle = "web Developer"))
+    list.add(Category(img = R.drawable.contacticon, title = "panda", subtitle = "ror Developer"))
+    list.add(Category(img = R.drawable.contacticon, title = "shrija", subtitle = "mobile Developer"))
     return list
 }
